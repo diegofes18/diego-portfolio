@@ -1,0 +1,55 @@
+---
+import Container from '../components/Container.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+
+const experiences = [
+  {
+    title: 'Data Engineer',
+    company: 'IXEN',
+    period: 'Apr 2025 — Present',
+    location: 'Madrid',
+    description: 'Design, build, and maintain scalable data pipelines. Automate ingestion, transformation, and data quality workflows. Work with cloud architectures and modeling for analytics and business intelligence.',
+    tags: ['Azure Databricks', 'Data Pipelines', 'Cloud Architecture', 'PySpark', 'Delta Lake'],
+  },
+  {
+    title: 'Software & Data Engineer',
+    company: 'Grupo Viajes El Corte Inglés',
+    period: 'Jan 2024 — Apr 2025',
+    location: 'Madrid',
+    description: 'Full-stack data engineering solutions focused on data processing and integration. Development of automated pipelines and ETL process optimization.',
+    tags: ['Python', 'SQL', 'Apache Spark', 'REST APIs', 'Airflow'],
+  },
+  {
+    title: 'Software Engineer Intern',
+    company: 'Tech Internship',
+    period: 'Jul 2023 — Dec 2023',
+    location: 'Palma de Mallorca',
+    description: 'Software development and data processing fundamentals. Participated in full-stack projects with focus on backend development.',
+    tags: ['Full Stack', 'Web Development', 'JavaScript', 'Python'],
+  },
+];
+---
+
+<section id="experience" class="py-20 md:py-32 bg-surface/30">
+  <Container>
+    <!-- Section title -->
+    <div class="mb-16 space-y-3">
+      <h2 class="text-4xl md:text-5xl font-bold">Experience</h2>
+      <p class="text-text-secondary text-lg">My professional journey in data engineering</p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="max-w-2xl space-y-6">
+      {experiences.map(exp => (
+        <ExperienceItem
+          title={exp.title}
+          company={exp.company}
+          period={exp.period}
+          location={exp.location}
+          description={exp.description}
+          tags={exp.tags}
+        />
+      ))}
+    </div>
+  </Container>
+</section>

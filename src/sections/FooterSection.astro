@@ -1,0 +1,77 @@
+---
+import Container from '../components/Container.astro';
+
+const currentYear = new Date().getFullYear();
+
+const links = [
+  { label: 'Home', href: '#hero' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'About', href: '#about' },
+];
+
+const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com', icon: 'github' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/diego-bermejo-cabañas-75b61a292', icon: 'linkedin' },
+  { label: 'Email', href: 'mailto:bermejodiego1@gmail.com', icon: 'email' },
+];
+---
+
+<footer class="border-t border-border bg-surface/50">
+  <Container class="py-12 md:py-16">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <!-- Brand -->
+      <div>
+        <h3 class="text-xl font-bold text-text mb-2">DB</h3>
+        <p class="text-text-secondary text-sm">Data Engineer & Cloud Architect</p>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h4 class="font-semibold text-text mb-4">Links</h4>
+        <ul class="space-y-2">
+          {links.map(link => (
+            <li>
+              <a href={link.href} class="text-text-secondary hover:text-accent-cyan transition-colors text-sm">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h4 class="font-semibold text-text mb-4">Connect with me</h4>
+        <ul class="space-y-2">
+          {socialLinks.map(link => (
+            <li>
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-text-secondary hover:text-accent-cyan transition-colors text-sm"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-8"></div>
+
+    <!-- Copyright -->
+    <div class="text-center text-text-secondary text-sm space-y-1">
+      <p>&copy; {currentYear} Diego Bermejo. All rights reserved.</p>
+      <p class="flex items-center justify-center gap-2">
+        Built with Astro and
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </p>
+    </div>
+  </Container>
+</footer>

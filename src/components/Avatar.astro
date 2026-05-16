@@ -1,0 +1,31 @@
+---
+// TODO: reemplazar /public/avatar.png con avatar definitivo
+// Recomendado: 400x400px, fondo transparente
+// Opciones:
+// 1. Foto real recortada en círculo
+// 2. Memoji/Avatar 3D de readyplayer.me
+// 3. Avatar generado por IA (Midjourney/DALL-E)
+
+interface Props {
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  class?: string;
+}
+
+const { size = 'md', class: className = '' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'w-16 h-16',
+  md: 'w-20 h-20',
+  lg: 'w-24 h-24',
+  xl: 'w-40 h-40 md:w-48 md:h-48',
+};
+---
+
+<div class={`flex-shrink-0 rounded-full overflow-hidden ${sizeClasses[size]} ${className}`}>
+  <!-- Avatar imagen -->
+  <img
+    src="/avatar.webp"
+    alt="Diego Bermejo"
+    class="w-full h-full rounded-full object-cover"
+  />
+</div>

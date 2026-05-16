@@ -1,0 +1,47 @@
+---
+import Container from '../components/Container.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Multi-Cloud Data Federation Layer',
+    description: 'Built a unified data federation platform bridging Azure Databricks and GCP BigQuery, enabling seamless querying across heterogeneous cloud data sources. Implemented Apache Iceberg for format-agnostic table management. Reduced data silos, improved query performance by 40%, and cut cloud egress costs by 35% through intelligent caching and partition pushdown strategies.',
+    image: '/projects/datalake.webp',
+    tags: ['Azure Databricks', 'BigQuery', 'Apache Iceberg', 'PySpark', 'Terraform'],
+  },
+  {
+    title: 'Real-Time ML Model Monitoring System',
+    description: 'Designed and deployed an end-to-end monitoring pipeline for production ML models using Kafka, Spark Structured Streaming, and custom drift detection algorithms. Processes 100K events/second with sub-second latency. Automatically triggers model retraining when data drift exceeds thresholds, maintaining 99.5% model accuracy in production.',
+    image: '/projects/streaming.webp',
+    tags: ['Kafka', 'Spark Streaming', 'Feature Store', 'scikit-learn', 'Python'],
+  },
+  {
+    title: 'Data Lakehouse Quality Framework',
+    description: 'Developed an automated data quality and governance framework for our data lakehouse architecture. Integrates schema validation, anomaly detection, and lineage tracking across 200+ data assets. Built with Great Expectations, dbt, and Apache Atlas. Reduced data incidents by 75% and improved incident resolution time from 4 hours to 15 minutes.',
+    image: '/projects/featurestore.webp',
+    tags: ['Great Expectations', 'dbt', 'Apache Atlas', 'Delta Lake', 'Airflow'],
+  },
+];
+---
+
+<section id="projects" class="py-20 md:py-32">
+  <Container>
+    <!-- Section title -->
+    <div class="mb-16 space-y-3">
+      <h2 class="text-4xl md:text-5xl font-bold">Featured Projects</h2>
+      <p class="text-text-secondary text-lg">Data engineering solutions I've built</p>
+    </div>
+
+    <!-- Projects grid -->
+    <div class="space-y-8 md:space-y-12">
+      {projects.map(project => (
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          tags={project.tags}
+        />
+      ))}
+    </div>
+  </Container>
+</section>

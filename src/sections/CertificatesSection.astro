@@ -1,0 +1,65 @@
+---
+import Container from '../components/Container.astro';
+import Badge from '../components/Badge.astro';
+
+const certificates = [
+  {
+    title: 'Cloudera Certified Data Engineer',
+    issuer: 'Cloudera',
+    year: '2024',
+  },
+  {
+    title: 'Databricks Certified Data Engineer Associate',
+    issuer: 'Databricks',
+    year: '2024',
+  },
+  {
+    title: 'Professional Data Engineer Certification',
+    issuer: 'Google Cloud',
+    year: '2023',
+  },
+  {
+    title: 'Scrum Master Certified (SMC)',
+    issuer: 'SCRUMstudy',
+    year: '2023',
+  },
+  {
+    title: 'Scrum Fundamentals Certified',
+    issuer: 'SCRUMstudy',
+    year: '2023',
+  },
+];
+---
+
+<section id="certificates" class="py-20 md:py-32">
+  <Container>
+    <!-- Section title -->
+    <div class="mb-16 space-y-3">
+      <h2 class="text-4xl md:text-5xl font-bold">Certifications</h2>
+      <p class="text-text-secondary text-lg">Professional credentials and achievements</p>
+    </div>
+
+    <!-- Certificates grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {certificates.map(cert => (
+        <div class="group relative bg-surface border border-border rounded-xl p-6 md:p-8 hover:border-accent-cyan transition-all duration-300">
+          <div class="space-y-4">
+            <h3 class="text-lg font-bold text-text group-hover:text-accent-cyan transition-colors">
+              {cert.title}
+            </h3>
+
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div class="space-y-1">
+                <p class="text-text-secondary text-sm font-medium">{cert.issuer}</p>
+                <p class="text-text-secondary text-xs">{cert.year}</p>
+              </div>
+              <Badge variant="accent">
+                ✓ Verified
+              </Badge>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

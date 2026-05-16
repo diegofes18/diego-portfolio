@@ -1,0 +1,48 @@
+---
+import '../styles/globals.css';
+import HeroSection from '../sections/HeroSection.astro';
+import ExperienceSection from '../sections/ExperienceSection.astro';
+import ProjectsSection from '../sections/ProjectsSection.astro';
+import CertificatesSection from '../sections/CertificatesSection.astro';
+import AboutSection from '../sections/AboutSection.astro';
+import FooterSection from '../sections/FooterSection.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Meta -->
+    <title>Diego Bermejo — Data Engineer & Cloud Architect</title>
+    <meta name="description" content="Data Engineer and Cloud Architect specializing in scalable data pipelines, cloud architectures, and big data solutions on Azure and GCP. Based in Madrid." />
+    <meta name="keywords" content="data engineer, cloud architect, azure, gcp, python, spark, databricks, data pipeline" />
+    <meta name="author" content="Diego Bermejo" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Diego Bermejo — Data Engineer & Cloud Architect" />
+    <meta property="og:description" content="Professional portfolio of Diego Bermejo, Data Engineer and Cloud Architect" />
+    <meta property="og:url" content="https://diegobermejo.dev" />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- TODO: Crear /public/favicon.svg -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <HeroSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <CertificatesSection />
+      <AboutSection />
+    </main>
+    <FooterSection />
+  </body>
+</html>
